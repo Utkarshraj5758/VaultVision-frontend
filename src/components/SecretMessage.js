@@ -14,7 +14,7 @@ function SecretMessage() {
     formData.append('file', file);
     formData.append('message', message);
 
-    const res = await fetch('http://127.0.0.1:5000/hide_message', {
+    const res = await fetch('https://backend-9-ysxh.onrender.com/hide_message', {
       method: 'POST',
       body: formData
     });
@@ -36,7 +36,7 @@ function SecretMessage() {
     const formData = new FormData();
     formData.append('file', file);
 
-    const res = await fetch('http://127.0.0.1:5000/reveal_message', {
+    const res = await fetch('https://backend-9-ysxh.onrender.com/reveal_message', {
       method: 'POST',
       body: formData
     });
@@ -49,7 +49,12 @@ function SecretMessage() {
     <div>
       <h2>Secret Message in Image</h2>
       <input type="file" onChange={e => setFile(e.target.files[0])} />
-      <input type="text" placeholder="Type secret message" value={message} onChange={e => setMessage(e.target.value)} />
+      <input
+        type="text"
+        placeholder="Type secret message"
+        value={message}
+        onChange={e => setMessage(e.target.value)}
+      />
       <br />
       <button onClick={handleHide}>Hide Message</button>
       <button onClick={handleReveal}>Reveal Message</button>
