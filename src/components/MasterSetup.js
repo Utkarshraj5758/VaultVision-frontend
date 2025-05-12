@@ -6,11 +6,12 @@ function MasterSetup() {
   const [result, setResult] = useState('');
 
   const handleSubmit = async () => {
-    const res = await fetch('http://127.0.0.1:5000/set_master_password', {
+    const res = await fetch('https://backend-9-ysxh.onrender.com/set_master_password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password })
     });
+
     const data = await res.json();
     setResult(data.message || data.error);
   };
