@@ -14,7 +14,7 @@ function FileEncryption() {
     formData.append('file', file);
     formData.append('password', password);
 
-    const res = await fetch('http://127.0.0.1:5000/encrypt_file', {
+    const res = await fetch('https://backend-9-ysxh.onrender.com/encrypt_file', {
       method: 'POST',
       body: formData
     });
@@ -37,7 +37,7 @@ function FileEncryption() {
     formData.append('file', file);
     formData.append('password', password);
 
-    const res = await fetch('http://127.0.0.1:5000/decrypt_file', {
+    const res = await fetch('https://backend-9-ysxh.onrender.com/decrypt_file', {
       method: 'POST',
       body: formData
     });
